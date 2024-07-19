@@ -70,13 +70,13 @@
         @media (min-width: 768px) {
             .category-links {
                 display: flex;
-                flex-wrap: wrap; /* Flex öðelerinin bir satýrda sýðmasýný saðlar */
+                flex-wrap: wrap; 
             }
 
                 .category-links a {
-                    flex: 1 1 100px; /* Linklerin esnekliðini ve minimum geniþliðini ayarlar */
-                    margin-right: 10px; /* Linkler arasýna 10px boþluk býrakýr */
-                    margin-bottom: 0; /* Alt alta sýralamada boþluk býrakmaz */
+                    flex: 1 1 100px;
+                    margin-right: 10px; 
+                    margin-bottom: 0; 
                 }
         }
 
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Görsellerin bulunduðu 10'luk bölüm -->
+                <!-- Görsellerin bulunduðu bölüm -->
                 <div class="col-lg-10">
                     <div id="page1" class="gallery active">
                         <!-- 1. Sayfa Görselleri -->
@@ -212,17 +212,17 @@
 
 
             </div>
+
+
         </section>
 
         <!-- Pagination -->
         <section id="pagenums">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <!-- Previous button -->
                     <li class="page-item"><a class="page-link" href="#" onclick="prevPage()">Previous</a></li>
                     <li class="page-item"><a class="page-link" href="#" onclick="showPage('page1')">1</a></li>
                     <li class="page-item"><a class="page-link" href="#" onclick="showPage('page2')">2</a></li>
-                    <!-- Next button -->
                     <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">Next</a></li>
 
                 </ul>
@@ -235,7 +235,6 @@
     </div>
 
     <script>
-        // Ýlk olarak sadece page1'i göster
         document.getElementById('page1').classList.add('active');
         document.querySelector('.pagination').addEventListener('click', function (e) {
             if (e.target.tagName === 'A') {
@@ -243,7 +242,6 @@
             }
         });
 
-        // Sayfa numaralarýnýn rengini güncelleyen fonksiyon
         function updatePageNumbers() {
             document.querySelectorAll('.pagination .page-link').forEach(link => {
                 link.classList.remove('active');
@@ -253,36 +251,28 @@
             });
         }
 
-        // Varsayýlan olarak gösterilen sayfa
         let currentPage = 1;
 
         function showPage(pageId) {
-            // Tüm galeri sayfalarýný gizle
             document.querySelectorAll('.gallery').forEach(page => {
                 page.classList.remove('active');
             });
 
-            // Ýstenilen sayfa ID'sine sahip galeriyi göster
             document.getElementById(pageId).classList.add('active');
 
-            // Þu anki sayfayý güncelle
-            currentPage = parseInt(pageId.substr(4)); // "page1" -> 1, "page2" -> 2, vb.
+            currentPage = parseInt(pageId.substr(4));
 
-            // Sayfanýn baþýna git
             window.scrollTo(0, 0);
 
-            // Sayfa numaralarýnýn rengini güncelle
             updatePageNumbers();
         }
 
-        // Next (Ýleri) sayfa fonksiyonu
         function nextPage() {
-            if (currentPage < 2) {  // Toplam sayfa sayýsýna göre güncelle
+            if (currentPage < 2) {  
                 showPage('page' + (currentPage + 1));
             }
         }
 
-        // Previous (Geri) sayfa fonksiyonu
         function prevPage() {
             if (currentPage > 1) {
                 showPage('page' + (currentPage - 1));
