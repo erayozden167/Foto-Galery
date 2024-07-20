@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foto Galery</title>
 
     <style>
-
+       
         #pagenums {
             display: flex;
             align-items: center;
@@ -257,23 +257,14 @@
 
 
             </div>
-            <div class="modal" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div id="modalExample" class="modal fade" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-lg" >
+                        <div class="modal-body w-100 h-100">
+                            <img class="w-100 img-fluid" src="#" id="modalContent" alt="Alternate Text" />                        
                         </div>
-                        <div class="modal-body">
-                            <img id="mod" src="#" />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
                 </div>
             </div>
+            
 
         </section>
 
@@ -340,10 +331,39 @@
             }
         }
 
-        document.querySelectorAll('.y').forEach(img => addEventListener('click', function () {
-            let modal = document.getElementById('mod');
-            let img = document.querySelector
-        }));
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tüm resimleri seç
+            const galleryImages = document.querySelectorAll('.y');
+
+            // Modal içeriği için img elementini seç
+            const modalContent = document.getElementById('modalContent');
+
+            // Her bir resim için tıklama olayını ekle
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    modalContent.src = img.src; // Modal içeriğini tıklanan resmin src'si ile güncelle
+                    const myModal = new bootstrap.Modal(document.getElementById('modalExample'));
+                    myModal.show(); // Modalı göster
+                });
+            });
+
+            //// Modal kapatma düğmesine tıklama olayını ekle (Opsiyonel)
+            //const closeModalBtn = document.querySelector('.btn-close');
+            //closeModalBtn.addEventListener('click', function () {
+            //    const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            //    myModal.hide(); // Modalı gizle
+            //});
+
+            //// Modal dışına tıklanınca modalı kapatma (Opsiyonel)
+            //const modalDialog = document.querySelector('.modal-dialog');
+            //modalDialog.addEventListener('click', function (event) {
+            //    if (event.target === modalDialog) {
+            //        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            //        myModal.hide(); // Modalı gizle
+            //    }
+            //});
+        });
+
     </script>
 
 
