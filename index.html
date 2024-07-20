@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foto Galery</title>
 
     <style>
-       
+        @media (min-width: 992px) {
+            #modalContent {
+                max-height: 80vh; /* Sayfa yüksekliğinin %60'ı kadar */
+            }
+        }
+
+        body {
+            background-color: #fffafa !important; /* Arka plan rengi olarak gri tonu kullanımı */
+        }
+
+        .container {
+            background-color: #eee9e9;
+            padding:0 !important;
+        }
+      
         #pagenums {
             display: flex;
             align-items: center;
@@ -92,8 +106,8 @@
 
 </head>
 <body>
-    <div class="container">
-        <header class="fixed-top">
+    <div class="container" >
+        <header class="sticky-top" >
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">IMG-Galery</a>
@@ -160,7 +174,7 @@
         </section>
 
         <!-- İmage Section -->
-        <section>
+        <section style="background-color: #fffafa ">
 
             <div class="row">
                 <!-- Kategori Penceresi -->
@@ -217,39 +231,39 @@
                     </div>
 
                     <div id="page2" class="gallery">
-                        <!-- 1. Sayfa Görselleri -->
+                        <!-- 2. Sayfa Görselleri -->
                         <h3>2.Sayfa</h3>
                         <div class="row">
                             <div class="col-md-4 mb-3 x">
-                                <img src="image/art/art1.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 1">
+                                <img src="image/art/art4.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 1">
                             </div>
                             <div class="col-md-4 mb-3 x">
-                                <img src="image/art/art2.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 2">
+                                <img src="image/art/art5.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 2">
                             </div>
                             <div class="col-md-4 mb-3 x">
-                                <img src="image/art/art3.png" class="img-fluid rounded w-100 h-100 y" alt="Görsel 3">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-3 x">
-                                <img src="image/cities/c1.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 1">
-                            </div>
-                            <div class="col-md-4 mb-3 x">
-                                <img src="image/animals/a1.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 2">
-                            </div>
-                            <div class="col-md-4 mb-3 x">
-                                <img src="image/drinks/d1.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 3">
+                                <img src="image/art/art6.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 3">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-3 x">
-                                <img src="image/Nature/n1.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 1">
+                                <img src="image/cities/c2.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 1">
                             </div>
                             <div class="col-md-4 mb-3 x">
-                                <img src="image/animals/a2.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 2">
+                                <img src="image/animals/a4.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 2">
                             </div>
                             <div class="col-md-4 mb-3 x">
-                                <img src="image/drinks/d2.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 3">
+                                <img src="image/drinks/d4.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 3">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3 x">
+                                <img src="image/Nature/n2.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 1">
+                            </div>
+                            <div class="col-md-4 mb-3 x">
+                                <img src="image/animals/a3.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 2">
+                            </div>
+                            <div class="col-md-4 mb-3 x">
+                                <img src="image/drinks/d5.jpg" class="img-fluid rounded w-100 h-100 y" alt="Görsel 3">
                             </div>
                         </div>
                     </div>
@@ -259,7 +273,7 @@
             </div>
             <div id="modalExample" class="modal fade" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-lg" >
-                        <div class="modal-body w-100 h-100">
+                        <div class="modal-body w-100">
                             <img class="w-100 img-fluid" src="#" id="modalContent" alt="Alternate Text" />                        
                         </div>
                 </div>
@@ -283,6 +297,7 @@
 
         <footer>
             <!-- Footer içeriği -->
+            Made By Eray Ozden
         </footer>
     </div>
 
